@@ -1,0 +1,20 @@
+<ul
+  id="messages-list"
+  class="max-w-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400"
+>
+  {% for message in messagesArray %}
+  <li
+    class="flex justify-between items-center w-[200px]"
+    id="message-{{ message.id }}"
+  >
+    <div>{{ message.message }}</div>
+    <span
+      class="text-red-600 bg-red-200 px-1 cursor-pointer select-none"
+      hx-trigger="click"
+      hx-delete="/messages/{{ message.id }}"
+      hx-target="#message-{{ message.id }}"
+      >x</span
+    >
+  </li>
+  {% endfor %}
+</ul>
