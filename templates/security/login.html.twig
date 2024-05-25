@@ -1,0 +1,117 @@
+{% extends 'layouts/loginLayout.html.twig' %} {% block loginBody %} {# {% if
+error %}
+<div class="alert alert-danger">
+  {{ error.messageKey|trans(error.messageData, 'security') }}
+</div>
+{% endif %} {% if app.user %}
+<div class="mb-3">
+  You are logged in as {{ app.user.userIdentifier }},
+  <a href="{{ path('app_logout') }}">Logout</a>
+</div>
+{% endif %}
+
+<h1 class="h3 mb-3 font-normal">Please sign in</h1>
+<label for="username">Email</label>
+<input
+  type="email"
+  value="{{ last_username }}"
+  name="_username"
+  id="username"
+  class="form-control"
+  autocomplete="email"
+  required
+  autofocus
+/>
+<label for="password">Password</label>
+<input
+  type="password"
+  name="_password"
+  id="password"
+  class="form-control"
+  autocomplete="current-password"
+  required
+/>
+
+<input
+  type="hidden"
+  name="_csrf_token"
+  value="{{ csrf_token('authenticate') }}"
+/>
+#} {# Uncomment this section and add a remember_me option below your firewall to
+activate remember me functionality. See
+https://symfony.com/doc/current/security/remember_me.html
+
+<div class="checkbox mb-3">
+  <label> <input type="checkbox" name="_remember_me" /> Remember me </label>
+</div>
+#}
+
+<form class="max-w-sm mx-auto" method="post">
+  <div class="mb-5">
+    <label
+      for="_username"
+      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+      >Your email</label
+    >
+    <input
+      type="email"
+      value="{{ last_username }}"
+      name="_username"
+      id="username"
+      autocomplete="email"
+      required
+      autofocus
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-[3px] focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+    />
+  </div>
+  <div class="mb-5">
+    <label
+      for="password"
+      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+      >Your password</label
+    >
+    <input
+      type="password"
+      name="_password"
+      id="password"
+      autocomplete="current-password"
+      required
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-[3px] focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+    />
+  </div>
+  <div class="flex items-start mb-5">
+    <div class="flex items-center h-5">
+      <input
+        id="remember"
+        type="checkbox"
+        value="_remember_me"
+        class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
+      />
+    </div>
+    <label
+      for="remember"
+      class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+      >Remember me</label
+    >
+  </div>
+  <input
+    type="hidden"
+    readonly
+    name="_csrf_token"
+    value="{{ csrf_token('authenticate') }}"
+  />
+  <button
+    type="submit"
+    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-[3px] text-sm w-full sm:w-full px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+  >
+    Login
+  </button>
+</form>
+<hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
+<div class=" grid grid-rows-2 grid-cols-2">
+  <div>google</div>
+  <div>microsoft</div>
+  <div>apple</div>
+  <div>sso</div>
+</div>
+{% endblock %}

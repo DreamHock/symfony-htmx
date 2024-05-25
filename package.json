@@ -13,6 +13,7 @@
         "vite-plugin-symfony": "^6.4"
     },
     "dependencies": {
+        "alpinejs": "^3.13.7",
         "htmx.org": "^1.9.11"
     }
 }

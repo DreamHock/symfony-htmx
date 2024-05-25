@@ -7,7 +7,7 @@ import symfonyPlugin from "vite-plugin-symfony";
 export default defineConfig({
     plugins: [
         /* react(), // if you're using React */
-        symfonyPlugin({refresh: true}),
+        symfonyPlugin({refresh: ["templates/*"]}),
     ],
     build: {
         rollupOptions: {

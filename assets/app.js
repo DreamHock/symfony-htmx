@@ -6,7 +6,11 @@ import './bootstrap.js';
  * which should already be in your base.html.twig.
  */
 import './styles/app.css';
-
 import 'htmx.org'
-
+import Alpine from 'alpinejs'
+ 
 window.htmx = require('htmx.org')
+
+window.Alpine = Alpine
+Alpine.start()
+ 

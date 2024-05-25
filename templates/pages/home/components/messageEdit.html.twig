@@ -1,0 +1,15 @@
+<li
+  class="flex justify-between items-center w-[200px]"
+  id="message-{{ message.id }}"
+>
+  <input value="{{ message.message }}" type="text" name="message" />
+  <button
+    class="text-green-700 bg-green-200"
+    hx-trigger="click"
+    hx-patch="messages/{{ message.id }}"
+    hx-target="#message-{{ message.id }}"
+    hx-include="[name=message]"
+  >
+    Save
+  </button>
+</li>

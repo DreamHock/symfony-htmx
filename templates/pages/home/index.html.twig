@@ -22,7 +22,7 @@ block body %}
       class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
       hx-post="{{ path('app_message_post') }}"
       hx-include="[name=message]"
-			hx-trigger="click"
+      hx-trigger="click"
       hx-target="#messages-list"
       hx-swap="beforeend"
     >
@@ -34,9 +34,11 @@ block body %}
     <h2 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
       Messages list:
     </h2>
-    <ul id="messages-list" hx-get="{{ path('app_messages_get') }}" hx-trigger="load">
-      
-    </ul>
+    <ul
+      id="messages-list"
+      hx-get="{{ path('app_messages_get') }}"
+      hx-trigger="load"
+    ></ul>
   </div>
 </div>
 {% endblock %}

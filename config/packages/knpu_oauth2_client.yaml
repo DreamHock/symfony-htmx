@@ -1,0 +1,13 @@
+
+knpu_oauth2_client:
+  clients:
+    # the key "google_main" can be anything, it
+    # will create a service: "knpu.oauth2.client.google_main"
+    google_main:
+      # this will be one of the supported types
+      type: google
+      client_id: "%env(OAUTH_GOOGLE_ID)%"
+      client_secret: "%env(OAUTH_GOOGLE_SECRET)%"
+      redirect_route: connect_google_check
+      redirect_params: 
+        service: google
