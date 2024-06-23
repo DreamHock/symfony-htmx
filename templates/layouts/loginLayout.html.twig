@@ -1,9 +1,11 @@
 {% extends 'base.html.twig' %} {% block title %}Login{% endblock %} {% block
 body %}
-<div class=" mt-12 flex justify-center">
+<div class="mt-12 flex justify-center">
   <div class="w-96">
     <h1 class="text-5xl">Security Project</h1>
-    {% block loginBody %} {% endblock %}
+    <div>
+      {% block loginBody %} {% endblock %}
+    </div>
   </div>
 </div>
 {% endblock %}

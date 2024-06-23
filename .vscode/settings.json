@@ -1,6 +1,5 @@
 {
   "yaml.schemas": {
-    "file:///home/yharakate/.vscode/extensions/docsmsft.docs-yaml-1.0.4/dist/toc.schema.json": "/toc\\.yml/i",
     "https://json.schemastore.org/yamllint.json": "file:///home/yharakate/Bureau/myStuffs/mystuffs/myprojects/symfony%2Bhtmx/config/packages/hwi_oauth.yaml"
   }
 }

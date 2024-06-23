@@ -108,10 +108,85 @@ https://symfony.com/doc/current/security/remember_me.html
   </button>
 </form>
 <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
-<div class=" grid grid-rows-2 grid-cols-2">
-  <div>google</div>
-  <div>microsoft</div>
-  <div>apple</div>
-  <div>sso</div>
+<div class="w-full flex gap-2">
+  <div class="flex-grow">
+    <a
+      href="{{ path('auth_oauth_connect', { service: 'google' }) }}"
+      class="flex items-center mb-2 justify-center transition ease-in-out delay-50 px-3 py-2.5 space-x-2 bg-white border border-slate-600 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600 focus:ring-opacity-50"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        x="0px"
+        y="0px"
+        width="25"
+        height="25"
+        viewBox="0 0 48 48"
+      >
+        <path
+          fill="#FFC107"
+          d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"
+        ></path>
+        <path
+          fill="#FF3D00"
+          d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"
+        ></path>
+        <path
+          fill="#4CAF50"
+          d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"
+        ></path>
+        <path
+          fill="#1976D2"
+          d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"
+        ></path>
+      </svg>
+      <span class="text-gray-700 font-medium">Google</span>
+    </a>
+  </div>
+  <div>
+    <a
+      href="{{ path('auth_oauth_connect', { service: 'facebook' }) }}"
+      class="flex items-center mb-2 justify-center transition ease-in-out delay-50 px-3 py-2.5 space-x-2 bg-white border border-slate-600 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600 focus:ring-opacity-50"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        x="0px"
+        y="0px"
+        width="25"
+        height="25"
+        viewBox="0 0 48 48"
+      >
+        <path
+          fill="#039be5"
+          d="M24 5A19 19 0 1 0 24 43A19 19 0 1 0 24 5Z"
+        ></path>
+        <path
+          fill="#fff"
+          d="M26.572,29.036h4.917l0.772-4.995h-5.69v-2.73c0-2.075,0.678-3.915,2.619-3.915h3.119v-4.359c-0.548-0.074-1.707-0.236-3.897-0.236c-4.573,0-7.254,2.415-7.254,7.917v3.323h-4.701v4.995h4.701v13.729C22.089,42.905,23.032,43,24,43c0.875,0,1.729-0.08,2.572-0.194V29.036z"
+        ></path>
+      </svg>
+      <span class="text-gray-700 font-medium">Facebook</span>
+    </a>
+  </div>
+  <div>
+    <a
+      href="{{ path('auth_oauth_connect', { service: 'google' }) }}"
+      class="flex gap-9 items-center mb-2 justify-center transition ease-in-out delay-50 px-3 py-2.5 space-x-2 bg-white border border-slate-600 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600 focus:ring-opacity-50"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        x="0px"
+        y="0px"
+        width="25"
+        height="25"
+        viewBox="0 0 50 50"
+      >
+        <path
+          d="M 29 8.53125 C 23.785 8.53125 19.371 11.6525 17.25 16.0625 C 16.121 15.2855 14.81175 14.71875 13.34375 14.71875 C 9.61675 14.71875 6.6445 17.66775 6.4375 21.34375 C 2.7105 22.68875 5.9211895e-16 26.16375 0 30.34375 C 0 35.67175 4.32825 40 9.65625 40 L 41.09375 40 C 45.99975 40 50 35.99975 50 31.09375 C 50 26.54275 46.50775 22.92625 42.09375 22.40625 C 42.10975 22.16425 42.15625 21.9375 42.15625 21.6875 C 42.15625 14.4375 36.25 8.53125 29 8.53125 z M 31.208984 16.255859 L 34.386719 16.523438 L 34.732422 19.769531 L 33.767578 20.736328 L 33.767578 22.234375 L 32.273438 22.234375 L 32.230469 22.277344 L 32.230469 23.744141 L 30.767578 23.744141 L 30.732422 23.779297 L 30.732422 25.242188 L 29.271484 25.242188 L 28.498047 26.019531 C 28.827047 26.811531 29 27.644 29 28.5 C 29 32.084 26.084 35 22.5 35 C 18.916 35 16 32.084 16 28.5 C 16 24.916 18.916 22 22.5 22 C 23.356 22 24.190469 22.171047 24.980469 22.498047 L 31.208984 16.255859 z M 21.5 28 A 1.5 1.5 0 0 0 21.5 31 A 1.5 1.5 0 0 0 21.5 28 z"
+        ></path>
+      </svg>
+      <span class="text-gray-700 font-medium">SSO</span>
+    </a>
+  </div>
 </div>
+
 {% endblock %}
